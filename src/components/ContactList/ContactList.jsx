@@ -1,4 +1,6 @@
 import { ContactItem } from 'components/ContactsItem/ContactsItem';
+import PropTypes from 'prop-types';
+import { List } from 'components/ContactList/ContactList.styled';
 
 let creatContacts = null;
 let creatContactItem = null;
@@ -21,5 +23,11 @@ export const ContactList = ({ contacts, filterState, handleBtnClick }) => {
       .map(creatContactItem);
   }
 
-  return <ul>{creatContacts}</ul>;
+  return <List>{creatContacts}</List>;
+};
+
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filterState: PropTypes.string.isRequired,
+  handleBtnClick: PropTypes.func.isRequired,
 };
