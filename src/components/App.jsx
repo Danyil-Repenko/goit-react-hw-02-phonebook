@@ -12,13 +12,13 @@ export class App extends Component {
 
   addContact = e => {
     e.preventDefault();
-    let nameInput = e.target.elements.name.value;
-    let numberInput = e.target.elements.number.value;
+    const nameInput = e.target.elements.name;
+    const numberInput = e.target.elements.number;
 
     const contact = [
       {
-        name: nameInput,
-        number: numberInput,
+        name: nameInput.value,
+        number: numberInput.value,
         id: nanoid(),
       },
     ];
@@ -31,8 +31,8 @@ export class App extends Component {
       });
     }
 
-    nameInput = '';
-    numberInput = '';
+    nameInput.value = '';
+    numberInput.value = '';
   };
 
   removeContact = e => {
